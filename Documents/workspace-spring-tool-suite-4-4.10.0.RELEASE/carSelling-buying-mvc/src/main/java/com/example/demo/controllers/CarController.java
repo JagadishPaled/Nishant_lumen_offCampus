@@ -26,7 +26,7 @@ public class CarController {
 	public String initForm(Model model) {
 
 		model.addAttribute("command", cus);
-		return "addcustomer";
+		return "addcars";
 	}
 	
 	@RequestMapping(value = "/carDetails", method = RequestMethod.POST)
@@ -35,12 +35,12 @@ public class CarController {
 		int rowAdded =repo.addCustomer(cus);
 		model.addAttribute("rowAdded",rowAdded);
 		System.out.println(cus);
-		return "addcustomer";
+		return "addcars";
 	}
 	@ModelAttribute("groups")
 	public String[] brands() {
 		
-		return new String[] {"Maruti","Benz","Audi","Tata","Bugati","Lamborghini"};
+		return new String[] {"Maruti","Mercedes-Benz","Audi","Tata","Volkswagen","Lamborghini","Hyundai","Toyota","KIA","Porsche"};
 	}
 	@ModelAttribute("group")
 	public String[] status() {
@@ -49,11 +49,11 @@ public class CarController {
 	}
 	
 	@RequestMapping(value = "/carDetails/all", method = RequestMethod.GET)
-	public String findAllCustomers(Model model) {
+	public String findAllCars(Model model) {
 		
 		List<Car> list=repo.getAllCar();
 		model.addAttribute("list", list);
-		return "showcustomer";
+		return "showcars";
 	}
 	@ModelAttribute("totalBrand")
 	public String[] brand(){
@@ -66,22 +66,22 @@ public class CarController {
 		return "searchBrand";
 	}
 	@RequestMapping(value="/carDetails/brand",method=RequestMethod.POST)	
-	public String findCarsByBrand(@ModelAttribute("command") @RequestParam("brand")String brand, Model model)
+	public String findCarsByBrand(@ModelAttribute("command") @RequestParam("brand")String selectBrand, Model model)
 	{
-		List<Car> list = repo.getBrand(brand);
+		List<Car> list = repo.getBrand(selectBrand);
 		
 		model.addAttribute("list",list);
 		return "brandBased";
 	}
-	@RequestMapping(value="/carDetails/status", method = RequestMethod.GET)
+	@RequestMapping(value="/carDetails/buySold", method = RequestMethod.GET)
 	public String initStatus(Model model) {
 		model.addAttribute("command",cus);
-		return "status";
+		return "buysold";
 	}
-	@RequestMapping(value="/carDetails/status",method=RequestMethod.POST)	
-	public String findStatus(@ModelAttribute("command") @RequestParam("status")String status, Model model)
+	@RequestMapping(value="/carDetails/buySold",method=RequestMethod.POST)	
+	public String findStatus(@ModelAttribute("command") @RequestParam("status")String buysold, Model model)
 	{
-		List<Car> list = repo.getStatus(status);
+		List<Car> list = repo.getDetailsStatus(buysold);
 		
 		model.addAttribute("list",list);
 		return "getStatusDetails";

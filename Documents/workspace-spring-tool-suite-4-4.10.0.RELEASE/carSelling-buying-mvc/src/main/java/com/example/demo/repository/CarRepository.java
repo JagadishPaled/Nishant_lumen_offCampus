@@ -43,7 +43,7 @@ public class CarRepository {
 		return custList;
 		
 	}
-	public List<Car> getStatus(String car_status){
+	public List<Car> getDetailsStatus(String car_status){
 		String sql = "select * from car where status=?";
 		List<Car> cus =template.query(sql, new Object[]{car_status},new BeanPropertyRowMapper<>(Car.class));
 		return cus;

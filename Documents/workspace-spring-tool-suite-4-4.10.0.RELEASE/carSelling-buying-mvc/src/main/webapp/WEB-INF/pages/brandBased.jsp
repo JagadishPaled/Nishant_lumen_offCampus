@@ -47,7 +47,7 @@
 		</style>
 		<meta charset="ISO-8859-1">
 		<title>
-		Insert title here
+		Brand Based Car Details
 		</title>
 	</head>
 	<body>

@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Select Brand</title>
+		<title>Check Sold and Unsold Cars</title>
 		<style type="text/css">
 				h1	
 					{
@@ -44,9 +44,9 @@
 	</head>
 	<body>
 	
-		<form:form method="post" action="status">
+		<form:form method="post" action="buySold">
 		
-		<h1>Please Select Brand</h1>
+		<h1>Check Availability Cars</h1>
 		<div>
 			<form:select path="status" items="${group}"></form:select>
 				

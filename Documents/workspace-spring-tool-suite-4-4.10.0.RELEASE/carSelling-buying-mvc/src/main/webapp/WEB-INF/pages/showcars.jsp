@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Show Customers</title>
+		<title>Show Car Information</title>
 		<style>
 				span
 					{

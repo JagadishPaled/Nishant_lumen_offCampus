@@ -5,7 +5,7 @@
 <html>
 	<head>
 	<meta charset="ISO-8859-1">
-	<title>Insert title here</title>
+	<title>Home</title>
 		<style type="text/css">
 			button
 				{
@@ -55,7 +55,7 @@
 				<a href="carDetails/SearchBrand" >Based On Brand</a>
 			</button>
 			<button>
-				<a href="carDetails/status" >Based On Status</a>
+				<a href="carDetails/buySold" >Based On Status</a>
 			</button>
 		</div>
 	</body>
